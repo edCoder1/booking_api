@@ -1,0 +1,10 @@
+.username {
+    margin-right: 10px;
+    text-align: right;
+}
+
+.my-footer {
+    position: absolute;
+    bottom: 0;
+    background-color: #f5f5f5
+}
