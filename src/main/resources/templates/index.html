@@ -1,12 +1,31 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
     <title>Hotel Booking App</title>
-    <link rel="stylesheet" href="../static/bootstrap.css" th:href="@{bootstrap.css}">
+    <link rel="stylesheet" th:if="${mode == 'development'}" href="../static/bootstrap.css" th:href="@{/bootstrap.css}">
+    <link rel="stylesheet" th:if="${mode == 'production'}" href="../static/bootstrap.css" th:href="@{/bootstrap.min.css}">
+    <link rel="stylesheet" href="../static/index.css" th:href="@{/index.css}">
 </head>
 <body>
-<h2>Hotel Booking!</h2>
+<header>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="#" class="navbar-brand">Booking Demo</a>
+                <p class="username navbar-text navbar-right" th:text="'Signed as ' + ${username}" >Signed as Anonymous</p>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<h3>Hello Thymeleaf!</h3>
+
+<footer class="footer my-footer">
+    <div class="container">
+        <p class="text-muted" th:text="${datetime}">Page was rendered Today </p>
+    </div>
+</footer>
 
 </body>
 </html>
